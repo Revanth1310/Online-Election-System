@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>VOTING</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background-image: url('../static/images/india.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+    
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #U_details{
+                
+                border-radius: 0px;
+                border-style: solid;
+                
+                
+                height: 713px;
+                width: 650px;
+            }
+            
+            #info_u{
+                text-align: left;
+                font-size: 30px;
+                padding: 50px;
+               
+            
+            
+                
+            }
+            #v_details{
+                
+                border-radius: 0px;
+                border-style: solid;
+                
+                height: 713px;
+                width: 850px;
+               
+            }
+            #table{
+                border: 1px solid black;
+                
+            }
+            #body{
+                font-size: 150%;
+                text-align: left;
+            }
+            
+            
+            
+    
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="table">
+            <table>
+                <th>
+                    <div id="U_details">
+                        <div id="head">
+                            <h1>Voter Details:</h1>
+                        </div><br>
+                        <div id="info_u">
+                            <img src="../static/images/{{gender}}.jpg"alt=Image height="150px">
+                            <p name="u_name">NAME :{{name}}<br></p>
+                               <p name="email">VOTER ID :{{id}}<br></p> 
+                                <p name="age">AGE :{{age}}<br></p>
+                               <p>GENDER :{{gender}}</p>
+                               <p>STATUS :{{ status}}</p>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div id="v_details">
+                        <div >
+                            <h1>Candidate Details:</h1>
+                        </div><hr>
+                        <div id="body">
+                            
+                            <div id="body">
+                                
+                                    {% if candidates %}
+                                        {% for candidate in candidates %}
+                                            
+                                        <form id="vote" action="/vote/{{candidate[0]}}"method='post'>
+                                            <img src="../static/images/{{candidate[0]}}.jpg" alt="{{ candidate[0] }} logo"height="120px">
+                                            Group:{{ candidate[0] }}
+                                            <button  style="font-size: 20px; padding: 10px; float: right;background-color: blue;" >Vote</button>
+                                        </form>
+                                        <hr>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>There Are No Candidates!</p>
+                                {% endif %}
+                            
+                        </div>
+                        
+                       
+                        
+                    </div>
+                </div>
+            </th>
+        
+        </table>
+       
+    </div>
+</body>
+</html>            
+                                            
+                                                    
+                                             
+                                            
+                                        
+                                        
+                            
+                       
+                          
+                   
+                            
+                            
+                           
+                        
+                        
+                       
+                   
+                

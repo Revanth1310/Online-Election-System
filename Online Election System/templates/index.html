@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href='../static/style.css'>
+ 
+
+</head>
+<body>
+ 
+
+    <div id="heading">
+      <h1>Online Election System</h1>
+    </div>
+   
+
+    <div class='div1'>
+      <div>
+        <h1>Login</h1>
+      </div>
+      <div id="error">
+        <p style="color: red;">{{ content }}</p>
+      </div>
+      <form action="/details" method='post'>
+        <div id="u_name">
+          <label for="user_name"></label>
+          <input type='text' id='user_name' name='user_name' placeholder='User' required >
+        </div>
+        <br>
+        <div>
+           <label for="pwd"></label>
+           <input type='password' id='pwd' name='pwd' placeholder='Password' required>
+           <br>
+        </div>
+        
+        
+        <div id="role"><br><br>
+          <select name="role" id="role" requried>
+    
+            <option value="Voter">Voter</option>
+
+            <option value="Candidate">Canditate</option>
+
+            </select><br><br>
+        </div>
+        <div class='submit'>
+          <input type="submit" id='submit' value="Submit">
+        </div>
+      </form>  
+      <form action="/password" method='get'>
+        <div class='fu'>
+          <input type="submit" value="forgot password">
+        </div>
+      </form>
+      <form action="/register" method='get'>
+        <div class='su'>
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+     
+</body>
+<html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REGISTER</title>
+    <link rel="stylesheet" href='../static/style_r.css'>
+    
+</head>
+<body>
+  <div id="heading">
+    <h1>Online Election System</h1>
+  </div>
+  
+    <div class='div1' >
+      <div style="color: red;">
+        {{ content }}
+      </div>
+      <div>
+        <h1>Sign Up</h1>
+      </div>
+        <form action="/register_Done" method='post'>
+        <div>
+          <input type='text' id='user_name' name='user_name' placeholder='User' required >
+        </div>
+        <br>
+        <div id="Age">
+          <input type="number" id="age" name="age" placeholder="Age"required><br>
+          <div>
+            <p style="color: red;">Age Should Be >=18</p>
+          </div>
+            
+          <div>
+            <label for="id"></label>
+            <input type='text' id='id' name='id' placeholder='Id' required>
+            <br>
+         </div> 
+            
+          
+        </div>
+        <br>
+        <div>
+            <label for="email"></label>
+            <input type='email' id='email' name='email' placeholder='Email' required>           
+         </div>
+         <br>
+         
+         
+        <div>
+          <label for="pwd"></label>
+           <input type='password' id='pwd' name='pwd' placeholder='Password' required>
+           <br>
+        </div>
+        <div>
+          <label for="gender"></label>
+            <input type="radio"  name="gender"value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+          
+            
+           </div>
+ 
+        <div id="role">
+          <select name="role" id="role">
+    
+            <option value="Voter">Voter</option>
+
+            <option value="Candidate">Canditate</option>
+
+            </select><br>
+
+        </div>
+        <div class='submit'>
+          
+          <input type="submit" id='submit' value="Submit">
+        </div>
+        
+    </form>  
+   </div> 
+</body>
+</html>

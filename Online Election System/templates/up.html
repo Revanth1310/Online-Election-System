@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>VERIFICATION</title>
+        <style>
+            body{
+                align-content: center;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                background-image: url('../static/images/election.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+    
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+   
+                
+                
+            }
+            input{
+                padding:10px;
+                border-radius: 10px;
+                width: 200px;
+            }
+            form{
+                font-size: 20px;
+                text-align: left;
+                color: yellow;
+                margin-left: 400px;
+
+            }
+            #heading{
+                margin-top: 50px;
+                font-family: cursive;
+                font-size: 60px;
+                color: rgb(49, 254, 3);
+            }
+            button{
+                color: white;
+                background-color: blue;
+                padding: 5px;
+                width: 100px;
+            }
+            
+    
+        </style>
+    </head>
+    <body>
+        <div id="heading">
+            <h>Online Election System</h>  
+        </div>
+              
+        <h1>Verification</h1>
+        <div>
+            <form action="/check" method="post">
+                <p>Enter E-mail To Send Otp</p>
+                <label for="email"></label>
+                <input type="text" id="email" name="email"placeholder="E-mail"required>
+                <button>Send-OTP</button><br>
+                {{message}}
+                {{content}}
+            </form>
+            <form action="/verify"method='post'>
+                <input type="hidden" name="Otp" value='{{Otp}}'>
+                <input type="hidden" name="email" value='{{email}}'>
+                <br>Otp:<br><br>
+                <label for="otp"></label>
+                <input type="number" id="otp" name="otp"placeholder="OTP"><br><br>
+                <button>Verify</button><br>
+            </form>
+                
+            
+            
+        </div>
+        
+        
+     
+        
+    </body>
+</html>
